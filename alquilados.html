@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informacion de la alquilacion</title>
+</head>
+<body>
+    <header>
+        <h1>Glob Gusters</h1>
+        <h1>Informacion del alquiler</h1>
+    </header>
+    Usuario que la alquila: 
+    <br>Fecha en la que se alquila:
+    <script>
+        var date= new Date(); 
+        var options= {day:'numeric',month:'long',year:'numeric'}
+        document.write(date.toLocaleDateString('es-Es',options));
+        var maxDate= date.setDate(date.getDate()+15);
+    </script>
+
+    <br>Fecha de devolucion:
+    <input type="date" min=date max="maxDate">
+    <br><input type="submit" value="Aceptar">
+</body>
+</html>
