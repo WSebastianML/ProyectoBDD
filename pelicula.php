@@ -1,5 +1,12 @@
 <?php
 require 'conexion.php';
+$con = new Conexion();
+$consultaPelicula = "SELECT * FROM Pelicula";
+$queryPelicula = $con->getConexion()->prepare($consultaPelicula);
+$queryPelicula->execute();
+if(!$queryPelicula){
+    echo "Error";
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +30,7 @@ require 'conexion.php';
                     <th>Nacionalidad</th>
                     <th>Productor</th>
                     <th>Director_id</th>
+                    <th>Operaciones</th>
                 </tr>
             </thead>
 
