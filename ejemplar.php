@@ -1,15 +1,15 @@
 <?php
 require 'conexion.php';
 $con = new Conexion();
-$consultaPelicula = "SELECT * FROM Pelicula";
+$consultaPelicula = "SELECT * FROM Ejemplar";
 $queryPelicula = $con->getConexion()->prepare($consultaPelicula);
 $queryPelicula->execute();
 if(!$queryPelicula){
     echo "Error";
 }
 
-if (isset($_POST['pelicula_id'])) {
-    $peliculaId = $_POST['pelicula_id'];
+if (isset($_POST['ejemplar_id'])) {
+    $peliculaId = $_POST['ejemplar_id'];
     
     // Realiza la función deseada con el ID de la película aquí
     //$borrar = "DELETE * FROM Pelicula WHERE pelicula_id = $peliculaId";
@@ -18,7 +18,7 @@ if (isset($_POST['pelicula_id'])) {
     // Por ejemplo, puedes hacer una consulta adicional usando $peliculaId
     
     // Luego, puedes mostrar el resultado o redirigir al usuario
-    $resultado = "Función ejecutada con éxito para la película ID: " . $peliculaId;
+    $resultado = "Función ejecutada con éxito para el ejemplar ID: " . $peliculaId;
     echo $resultado;
 }
 ?>
@@ -34,16 +34,16 @@ if (isset($_POST['pelicula_id'])) {
 <body>
 
     <main class="contenedor">
-        <h1>Peliculas</h1>
+        <h1>Ejemplares</h1>
+        <a href="crearEjemplar.php">Crear</a>
         <table class="propiedades">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Fecha</th>
-                    <th>Título</th>
-                    <th>Nacionalidad</th>
-                    <th>Productor</th>
-                    <th>Director_id</th>
+                    <th>Conservacion</th>
+                    <th>Numero</th>
+                    <th>pelicula_id</th>
+                    <th>agencia_id</th>
                     <th>Operaciones</th>
                 </tr>
             </thead>
@@ -53,15 +53,14 @@ if (isset($_POST['pelicula_id'])) {
                 
                 while($row = $queryPelicula->fetch(PDO::FETCH_ASSOC)){
                     echo "<tr>";
+                    echo "<td>" . $row['ejemplar_id'] . "</td>";
+                    echo "<td>" . $row['conservacion'] . "</td>";
+                    echo "<td>" . $row['numeroEjemplar'] . "</td>";
                     echo "<td>" . $row['pelicula_id'] . "</td>";
-                    echo "<td>" . $row['fecha'] . "</td>";
-                    echo "<td>" . $row['titulo'] . "</td>";
-                    echo "<td>" . $row['nacionalidad'] . "</td>";
-                    echo "<td>" . $row['productor'] . "</td>";
-                    echo "<td>" . $row['director_id'] . "</td>";
+                    echo "<td>" . $row['agencia_id'] . "</td>";
                     echo "<td>";
                     echo "<form method='post'>";
-                    echo "<input type='hidden' name='pelicula_id' value='" . $row['pelicula_id'] . "'>";
+                    echo "<input type='hidden' name='ejemplar_id' value='" . $row['ejemplar_id'] . "'>";
                     echo "<input type='submit' value='Borrar'>";
                     echo "</form>";
                     echo "</td>";
