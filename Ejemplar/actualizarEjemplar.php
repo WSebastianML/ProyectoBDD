@@ -25,14 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query->execute();
         header('Location: ejemplar.php');
     }
-
     
     if(!$query){
         echo "Error";
     }
-}else{
-    echo "no";
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glob Gusters</title>
+    <title>Ejemplar</title>
     <link rel="stylesheet" href="../interfaz.css">
 </head>
 <body>
@@ -49,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
 
     <main class="contenedor">
-        <h2>Crear un nuevo ejemplar</h2>
+        <h2>Actualizar ejemplar</h2>
         <a href="ejemplar.php">Regresar</a>
         <form method="POST">
             <fieldset>

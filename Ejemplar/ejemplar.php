@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peliculas</title>
+    <title>Ejemplar</title>
     <link rel="stylesheet" href="../interfaz.css">
 </head>
 <body>
@@ -47,6 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="contenedor">
         <h1>Ejemplares</h1>
         <a href="crearEjemplar.php">Crear</a>
+        <a href="actualizarEjemplar.php">Actualizar</a>
         <table class="propiedades">
             <thead>
                 <tr>

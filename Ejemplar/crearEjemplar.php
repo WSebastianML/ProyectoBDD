@@ -30,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(!$query){
         echo "Error";
     }
-}else{
-    echo "no";
 }
 ?>
 
@@ -40,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glob Gusters</title>
+    <title>Ejemplar</title>
     <link rel="stylesheet" href="../interfaz.css">
 </head>
 <body>
