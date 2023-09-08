@@ -30,10 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: socio.php');
     }
 
-    
-}else{
-    echo "no";
-}
 ?>
 
 <!DOCTYPE html>

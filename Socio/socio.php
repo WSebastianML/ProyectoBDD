@@ -27,9 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //echo $borrar;
     header('Location: socio.php');
 
-    if(!$query){
-        echo "Error";
-    }
 
 }
 
