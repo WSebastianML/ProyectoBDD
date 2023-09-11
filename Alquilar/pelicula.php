@@ -24,7 +24,7 @@ if(!$queryPelicula){
     <link rel="stylesheet" href="../interfaz.css">
 </head>
 <body>
-
+    
     <main class="contenedor">
         <h1>Peliculas</h1>
         
