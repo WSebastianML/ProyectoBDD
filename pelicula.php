@@ -32,7 +32,7 @@ if (isset($_POST['pelicula_id'])) {
     <link rel="stylesheet" href="interfaz.css">
 </head>
 <body>
-
+    
     <main class="contenedor">
         <h1>Peliculas</h1>
         <table class="propiedades">
