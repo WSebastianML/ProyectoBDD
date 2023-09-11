@@ -14,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $query2->execute();
 
     if($agencia_id == 1){
-        $consulta = "UPDATE Ejemplares_info_01 SET numeroEjemplar=$numeroEjemplar, pelicula_id=$pelicula_id, agencia_id=$agencia_id WHERE ejemplar_id=$id";
+        $consulta = "UPDATE Ejemplares_info_01 SET numeroEjemplar='$numeroEjemplar', pelicula_id=$pelicula_id, agencia_id=$agencia_id WHERE ejemplar_id=$id";
         $query = $con->getConexion()->prepare($consulta);
         $query->execute();
         header('Location: ejemplar.php');
         
     }else if($agencia_id == 2){
-        $consulta = "UPDATE [WIN-D5TV30MDGGJ].[BaseGuayaquil].dbo.Ejemplares_info_02 SET numeroEjemplar=$numeroEjemplar, pelicula_id=$pelicula_id, agencia_id=$agencia_id WHERE ejemplar_id=$id";
+        $consulta = "UPDATE [WIN-D5TV30MDGGJ].[BaseGuayaquil].dbo.Ejemplares_info_02 SET numeroEjemplar='$numeroEjemplar', pelicula_id=$pelicula_id, agencia_id=$agencia_id WHERE ejemplar_id=$id";
         $query = $con->getConexion()->prepare($consulta);
         $query->execute();
         header('Location: ejemplar.php');

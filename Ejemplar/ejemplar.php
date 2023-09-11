@@ -11,24 +11,26 @@ if(!$queryPelicula){
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $ejemplarId = $_POST['ejemplar_id'];
     $agencia_id = $_POST['agencia_id'];
+
+    $borrar = "DELETE Ejemplar_Conservacion WHERE ejemplar_id = $ejemplarId";
+    $query = $con->getConexion()->prepare($borrar);
+    $query->execute();
     
     if($agencia_id == 1){
-        $borrar = "DELETE Ejemplar_Conservacion WHERE ejemplar_id = $ejemplarId";
-        $borrar2 = "DELETE Ejemplares_info_01 WHERE ejemplar_id = $ejempalrId";
-        $query = $con->getConexion()->prepare($borrar);
-        $query2 = $con->getConexion()->prepare($query2);
-        $query->execute();
+       
+        $borrar2 = "DELETE Ejemplares_info_01 WHERE ejemplar_id = $ejemplarId";
+        $query2 = $con->getConexion()->prepare($borrar2);
         $query2->execute();
 
     }else if($agencia_id == 2){
-        $borrar = "DELETE [WIN-D5TV30MDGGJ].[BaseGuayaquil].dbo.Ejemplar_info_02 WHERE ejemplar_id = $ejemplarId";
+        $borrar = "DELETE [WIN-D5TV30MDGGJ].[BaseGuayaquil].dbo.Ejemplares_info_02 WHERE ejemplar_id = $ejemplarId";
         $query = $con->getConexion()->prepare($borrar);
         $query->execute();
     }
     
     
     //echo $borrar;
-    header('Location: socio.php');
+    header('Location: ejemplar.php');
 
 
 }

@@ -10,20 +10,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $agencia_id = $_POST["agencia_id"];
 
     $consulta2 = "INSERT INTO Ejemplar_Conservacion VALUES ($id, '$conservacion', $agencia_id)";
+    //echo $consulta2;
     $query2 = $con->getConexion()->prepare($consulta2);
     $query2->execute();
 
     if($agencia_id == 1){
-        $consulta = "INSERT INTO Ejemplar_info_01 VALUES ($id, '$numeroEjemplar', $pelicula_id, $agencia_id)";
+        $consulta = "INSERT INTO Ejemplares_info_01 VALUES ($id, '$numeroEjemplar', $pelicula_id, $agencia_id)";
         $query = $con->getConexion()->prepare($consulta);
         $query->execute();
         header('Location: ejemplar.php');
+        //echo $consulta;
         
     }else if($agencia_id == 2){
         $consulta = "INSERT INTO [WIN-D5TV30MDGGJ].[BaseGuayaquil].dbo.Ejemplares_info_02 VALUES ($id, '$numeroEjemplar', $pelicula_id, $agencia_id)";
         $query = $con->getConexion()->prepare($consulta);
         $query->execute();
         header('Location: ejemplar.php');
+        //echo $consulta;
     }
 
     
